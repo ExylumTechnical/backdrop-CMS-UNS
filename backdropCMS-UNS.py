@@ -43,6 +43,9 @@ def sendLogin(url,username,password,formID):
 
 
 def mainExectionFunction(url,usernameFile,password,limit=1,lockout=60):
+    # Rate limiting can be adjusted in the limit and lockout variubles above
+    # limit refers to how long to wait after each request in seconds
+    # lockout refers to how many seconds to wait after lockout to begin sending requests again
     formID=getFormID(url+"/?q=user/login")
     print("Got the form ID: "+formID)
     usernames=[]
